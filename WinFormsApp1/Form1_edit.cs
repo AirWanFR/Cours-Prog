@@ -14,7 +14,10 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ceci est le message", "Titre de la boîte");
+            var tmp = pictureBox1.Image;
+            pictureBox1.Image = pictureBox2.Image;
+            pictureBox2.Image = tmp;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -25,6 +28,13 @@ namespace WinFormsApp1
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 win2 = new Form2();
+            win2.Show();
+            this.Hide();
         }
     }
 }

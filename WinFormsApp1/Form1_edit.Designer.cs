@@ -33,6 +33,7 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -43,26 +44,26 @@
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Crimson;
-            label1.Location = new Point(322, 20);
+            label1.Location = new Point(289, 20);
             label1.Name = "label1";
-            label1.Size = new Size(122, 43);
+            label1.Size = new Size(189, 43);
             label1.TabIndex = 0;
-            label1.Text = "Change";
+            label1.Text = "First Exercice";
             label1.Click += label1_Click;
             // 
             // button1
             // 
             button1.AutoSize = true;
             button1.BackColor = Color.Aquamarine;
-            button1.Cursor = Cursors.No;
+            button1.Cursor = Cursors.SizeWE;
             button1.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.DarkBlue;
             button1.ImageAlign = ContentAlignment.BottomCenter;
-            button1.Location = new Point(303, 340);
+            button1.Location = new Point(298, 340);
             button1.Name = "button1";
-            button1.Size = new Size(161, 42);
+            button1.Size = new Size(171, 42);
             button1.TabIndex = 1;
-            button1.Text = "LE BOUBOU";
+            button1.Text = "Swap Images";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -89,12 +90,24 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.Location = new Point(319, 186);
+            button2.Name = "button2";
+            button2.Size = new Size(129, 30);
+            button2.TabIndex = 4;
+            button2.Text = "change windows";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1_edit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(766, 403);
+            Controls.Add(button2);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
@@ -117,5 +130,6 @@
         private Button button1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button button2;
     }
 }
