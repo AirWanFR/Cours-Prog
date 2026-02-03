@@ -109,7 +109,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             ForeColor = SystemColors.MenuText;
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "Exercice 1 - Bases";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
