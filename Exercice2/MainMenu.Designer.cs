@@ -64,6 +64,7 @@
             MenuList.Name = "MenuList";
             MenuList.Size = new Size(229, 26);
             MenuList.Text = "Liste";
+            MenuList.Click += MenuList_Click;
             // 
             // MenuProgBar
             // 

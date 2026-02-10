@@ -59,5 +59,11 @@ namespace Exercice2
             ProgressBar Wpb = new ProgressBar();
             Wpb.ShowDialog();
         }
+
+        private void MenuList_Click(object sender, EventArgs e)
+        {
+            EcranList Wel = new EcranList();
+            Wel.ShowDialog();
+        }
     }
 }
