@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.IO;
 using System.Numerics;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Exercice2
 {
@@ -22,6 +23,8 @@ namespace Exercice2
 
         private const int smLire = 0x0199;
         private const int smEcrire = 0x019A;
+
+        int encodeNumber = 1;
         public EcranList()
         {
             InitializeComponent();
@@ -61,6 +64,7 @@ namespace Exercice2
         private void EcranList_Load(object sender, EventArgs e)
         {
             Activer(true);
+            lbPersonne.Sorted = true;
 
         }
 
@@ -84,13 +88,23 @@ namespace Exercice2
                 int i = lbPersonne.SelectedIndex;
                 String resultat = $"{tbNom.Text} ({cbQualite.Text})";
                 lbPersonne.Items[i] = resultat;
+
+                SendMessage(lbPersonne.Handle, smEcrire, i, encodeNumber);
+
                 Activer(true);
+
+                encodeNumber++;
             }
             else
             {
                 String resultat = $"{tbNom.Text} ({cbQualite.Text})";
-                lbPersonne.Items.Add(resultat);
+                int index = lbPersonne.Items.Add(resultat);
+
+                SendMessage(lbPersonne.Handle, smEcrire, index, encodeNumber);
+
                 Activer(true);
+
+                encodeNumber++;
             }
         }
 
@@ -105,14 +119,14 @@ namespace Exercice2
             {
                 filename = ofdOuvrir.FileName;
 
-                // Vide la liste actuelle avant de charger le fichier
                 lbPersonne.Items.Clear();
 
-                // Lecture du fichier texte
                 string[] lignes = System.IO.File.ReadAllLines(filename);
                 foreach (string ligne in lignes)
                 {
-                    lbPersonne.Items.Add(ligne);
+                    int index = lbPersonne.Items.Add(ligne);
+                    SendMessage(lbPersonne.Handle, smEcrire, index, encodeNumber);
+                    encodeNumber++;
                 }
             }
         }
@@ -147,10 +161,12 @@ namespace Exercice2
         {
             int index = lbPersonne.SelectedIndex;
             String data = lbPersonne.Items[index].ToString();
+            int donnéeCachée = SendMessage(lbPersonne.Handle, smLire, index, 0);
 
 
             MessageBox.Show($"Données : {data}\n" +
-                        $"Index : {index}\n");
+                        $"Index : {index}\n" +
+                        $"Données Cachées : {donnéeCachée}");
         }
 
         private void bModifier_Click(object sender, EventArgs e)
@@ -167,13 +183,18 @@ namespace Exercice2
 
                 Activer(false);
 
-               
-    }
+
+            }
             else
             {
                 MessageBox.Show("Veuillez sélectionner une personne à modifier.");
             }
 
+        }
+
+        private void EcranList_Click(object sender, EventArgs e)
+        {
+            lbPersonne.ClearSelected();
         }
     }
 }

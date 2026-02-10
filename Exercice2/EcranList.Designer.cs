@@ -212,6 +212,7 @@
             Name = "EcranList";
             Text = "EcranList";
             Load += EcranList_Load;
+            Click += EcranList_Click;
             gbDetail.ResumeLayout(false);
             gbDetail.PerformLayout();
             ResumeLayout(false);
