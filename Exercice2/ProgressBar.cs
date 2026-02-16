@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Exercice2
+namespace MainMenu
 {
     public partial class ProgressBar : Form
     {

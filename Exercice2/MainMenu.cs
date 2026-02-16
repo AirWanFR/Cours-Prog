@@ -1,4 +1,4 @@
-namespace Exercice2
+namespace MainMenu
 {
     public partial class MainMenu : Form
     {

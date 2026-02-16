@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Exercice2
+namespace MainMenu
 {
     public partial class EcranList : Form
     {
@@ -77,35 +77,49 @@ namespace Exercice2
         {
             if (lbPersonne.SelectedIndex != -1)
             {
+                int idSupprimer = SendMessage(lbPersonne.Handle, smLire, lbPersonne.SelectedIndex, 0);
                 lbPersonne.Items.RemoveAt(lbPersonne.SelectedIndex);
+                for (int i = 0; i < lbPersonne.Items.Count; i++)
+                {
+                    int idActuel = SendMessage(lbPersonne.Handle, smLire, i, 0);
+                    if (idActuel > idSupprimer)
+                    {
+                        SendMessage(lbPersonne.Handle, smEcrire, i, idActuel - 1);
+                    }
+                }
+                if (encodeNumber > 1)
+                {
+                    encodeNumber--;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner une personne à supprimer.");
             }
         }
 
         private void bConfirmer_Click(object sender, EventArgs e)
         {
+            String resultat = $"{tbNom.Text} ({cbQualite.Text})";
             if (lbPersonne.SelectedIndex != -1)
             {
                 int i = lbPersonne.SelectedIndex;
-                String resultat = $"{tbNom.Text} ({cbQualite.Text})";
                 lbPersonne.Items[i] = resultat;
 
                 SendMessage(lbPersonne.Handle, smEcrire, i, encodeNumber);
 
-                Activer(true);
 
-                encodeNumber++;
             }
             else
             {
-                String resultat = $"{tbNom.Text} ({cbQualite.Text})";
+               
                 int index = lbPersonne.Items.Add(resultat);
-
                 SendMessage(lbPersonne.Handle, smEcrire, index, encodeNumber);
 
-                Activer(true);
-
                 encodeNumber++;
-            }
+            }                
+            Activer(true);
+
         }
 
         private void bAnnuler_Click(object sender, EventArgs e)
@@ -124,11 +138,23 @@ namespace Exercice2
                 string[] lignes = System.IO.File.ReadAllLines(filename);
                 foreach (string ligne in lignes)
                 {
-                    int index = lbPersonne.Items.Add(ligne);
-                    SendMessage(lbPersonne.Handle, smEcrire, index, encodeNumber);
-                    encodeNumber++;
+                    if (ligne.Contains("#"))
+                    {
+                        int positionDiese = ligne.LastIndexOf('#');
+                        string texteAffichable = ligne.Substring(0, positionDiese);
+                        int idRecupere = int.Parse(ligne.Substring(positionDiese + 1));
+                        int index = lbPersonne.Items.Add(texteAffichable);
+
+                        SendMessage(lbPersonne.Handle, smEcrire, index, idRecupere);
+
+
+                        if (idRecupere >= encodeNumber)
+                        {
+                            encodeNumber = idRecupere + 1;
+                        }
+                    }
+                    }
                 }
-            }
         }
 
         private void bEnregistrer_Click(object sender, EventArgs e)
@@ -146,12 +172,17 @@ namespace Exercice2
 
                 for (int i = 0; i < lbPersonne.Items.Count; i++)
                 {
-                    file += lbPersonne.Items[i].ToString() + Environment.NewLine;
+                    String ligne = lbPersonne.Items[i].ToString();
+                    String donnéeCachée = SendMessage(lbPersonne.Handle, smLire, i, 0).ToString();
+                    String ligneAvecDonnéeCachée = $"{ligne}#{donnéeCachée}";
+                    file += ligneAvecDonnéeCachée + Environment.NewLine;
                     System.Diagnostics.Debug.WriteLine(lbPersonne.Items[i].ToString());
                 }
                 File.WriteAllText(filename, file.ToString());
 
                 lbPersonne.Items.Clear();
+                encodeNumber = 0;
+                MessageBox.Show("Fichier enregistré avec succès !");
             }
 
 

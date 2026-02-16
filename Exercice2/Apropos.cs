@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
-using Exercice2.Properties;
+using MainMenu.Properties;
 
-namespace Exercice2
+namespace MainMenu
 {
     public partial class Apropos : Form
     {

@@ -1,4 +1,4 @@
-namespace Exercice2
+namespace MainMenu
 {
     internal static class Program
     {
