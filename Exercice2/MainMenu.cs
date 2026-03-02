@@ -74,5 +74,17 @@ namespace MainMenu
             FicMalware Wmal = new FicMalware();
             Wmal.ShowDialog();
         }
+
+        private void spirographeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicSpirographe Wspi = new FicSpirographe();
+            Wspi.ShowDialog();
+        }
+
+        private void horlogeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicHorloge Whor = new FicHorloge();
+            Whor.ShowDialog();
+        }
     }
 }
