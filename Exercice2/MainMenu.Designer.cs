@@ -37,6 +37,7 @@
             MenuExit = new ToolStripMenuItem();
             applicationsToolStripMenuItem = new ToolStripMenuItem();
             MenuEditor = new ToolStripMenuItem();
+            malwareToolStripMenuItem = new ToolStripMenuItem();
             aToolStripMenuItem = new ToolStripMenuItem();
             MenuAbout = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
@@ -87,7 +88,7 @@
             // 
             // applicationsToolStripMenuItem
             // 
-            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor });
+            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor, malwareToolStripMenuItem });
             applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             applicationsToolStripMenuItem.Size = new Size(106, 24);
             applicationsToolStripMenuItem.Text = "Applications";
@@ -95,9 +96,16 @@
             // MenuEditor
             // 
             MenuEditor.Name = "MenuEditor";
-            MenuEditor.Size = new Size(139, 26);
+            MenuEditor.Size = new Size(224, 26);
             MenuEditor.Text = "Editeur";
             MenuEditor.Click += MenuEditor_Click;
+            // 
+            // malwareToolStripMenuItem
+            // 
+            malwareToolStripMenuItem.Name = "malwareToolStripMenuItem";
+            malwareToolStripMenuItem.Size = new Size(224, 26);
+            malwareToolStripMenuItem.Text = "Malware";
+            malwareToolStripMenuItem.Click += malwareToolStripMenuItem_Click;
             // 
             // aToolStripMenuItem
             // 
@@ -142,5 +150,6 @@
         private ToolStripMenuItem MenuExit;
         private ToolStripMenuItem MenuEditor;
         private ToolStripMenuItem MenuAbout;
+        private ToolStripMenuItem malwareToolStripMenuItem;
     }
 }

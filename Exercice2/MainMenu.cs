@@ -2,6 +2,8 @@ namespace MainMenu
 {
     public partial class MainMenu : Form
     {
+        public static object Properties { get; internal set; }
+
         public MainMenu()
         {
             InitializeComponent();
@@ -27,7 +29,8 @@ namespace MainMenu
 
         private void MenuEditor_Click(object sender, EventArgs e)
         {
-            FoncNonImplemented(sender, e);
+            FicEditeur Wed = new FicEditeur();
+            Wed.ShowDialog();
         }
 
         private void MenuExit_Click(object sender, EventArgs e)
@@ -64,6 +67,12 @@ namespace MainMenu
         {
             EcranList Wel = new EcranList();
             Wel.ShowDialog();
+        }
+
+        private void malwareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicMalware Wmal = new FicMalware();
+            Wmal.ShowDialog();
         }
     }
 }
