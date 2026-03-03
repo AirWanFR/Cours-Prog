@@ -70,8 +70,8 @@ namespace MainMenu
             for (int i = 0; i < 12; i++)
             {
                 double angleRad = (i * 30 * Math.PI / 180.0) - Math.PI / 2.0;
-                float xStart = (float)(xc + (rayon - 10) * Math.Cos(angleRad));
-                float yStart = (float)(yc + (rayon - 10) * Math.Sin(angleRad));
+                float xStart = (float)(xc + (rayon - 20) * Math.Cos(angleRad));
+                float yStart = (float)(yc + (rayon - 20) * Math.Sin(angleRad));
                 float xEnd = (float)(xc + rayon * Math.Cos(angleRad));
                 float yEnd = (float)(yc + rayon * Math.Sin(angleRad));
                 g.DrawLine(p, xStart, yStart, xEnd, yEnd);

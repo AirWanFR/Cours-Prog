@@ -86,5 +86,11 @@ namespace MainMenu
             FicHorloge Whor = new FicHorloge();
             Whor.ShowDialog();
         }
+
+        private void monitoringClavierSourisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicClavierSouris Wcs = new FicClavierSouris();
+            Wcs.ShowDialog();
+        }
     }
 }

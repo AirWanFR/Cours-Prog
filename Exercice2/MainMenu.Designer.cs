@@ -39,9 +39,10 @@
             MenuEditor = new ToolStripMenuItem();
             malwareToolStripMenuItem = new ToolStripMenuItem();
             spirographeToolStripMenuItem = new ToolStripMenuItem();
+            horlogeToolStripMenuItem = new ToolStripMenuItem();
+            monitoringClavierSourisToolStripMenuItem = new ToolStripMenuItem();
             aToolStripMenuItem = new ToolStripMenuItem();
             MenuAbout = new ToolStripMenuItem();
-            horlogeToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             // 
             // applicationsToolStripMenuItem
             // 
-            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor, malwareToolStripMenuItem, spirographeToolStripMenuItem, horlogeToolStripMenuItem });
+            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor, malwareToolStripMenuItem, spirographeToolStripMenuItem, horlogeToolStripMenuItem, monitoringClavierSourisToolStripMenuItem });
             applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             applicationsToolStripMenuItem.Size = new Size(106, 24);
             applicationsToolStripMenuItem.Text = "Applications";
@@ -98,23 +99,37 @@
             // MenuEditor
             // 
             MenuEditor.Name = "MenuEditor";
-            MenuEditor.Size = new Size(224, 26);
+            MenuEditor.Size = new Size(259, 26);
             MenuEditor.Text = "Editeur";
             MenuEditor.Click += MenuEditor_Click;
             // 
             // malwareToolStripMenuItem
             // 
             malwareToolStripMenuItem.Name = "malwareToolStripMenuItem";
-            malwareToolStripMenuItem.Size = new Size(224, 26);
+            malwareToolStripMenuItem.Size = new Size(259, 26);
             malwareToolStripMenuItem.Text = "Malware";
             malwareToolStripMenuItem.Click += malwareToolStripMenuItem_Click;
             // 
             // spirographeToolStripMenuItem
             // 
             spirographeToolStripMenuItem.Name = "spirographeToolStripMenuItem";
-            spirographeToolStripMenuItem.Size = new Size(224, 26);
+            spirographeToolStripMenuItem.Size = new Size(259, 26);
             spirographeToolStripMenuItem.Text = "Spirographe";
             spirographeToolStripMenuItem.Click += spirographeToolStripMenuItem_Click;
+            // 
+            // horlogeToolStripMenuItem
+            // 
+            horlogeToolStripMenuItem.Name = "horlogeToolStripMenuItem";
+            horlogeToolStripMenuItem.Size = new Size(259, 26);
+            horlogeToolStripMenuItem.Text = "Horloge";
+            horlogeToolStripMenuItem.Click += horlogeToolStripMenuItem_Click;
+            // 
+            // monitoringClavierSourisToolStripMenuItem
+            // 
+            monitoringClavierSourisToolStripMenuItem.Name = "monitoringClavierSourisToolStripMenuItem";
+            monitoringClavierSourisToolStripMenuItem.Size = new Size(259, 26);
+            monitoringClavierSourisToolStripMenuItem.Text = "Monitoring Clavier Souris";
+            monitoringClavierSourisToolStripMenuItem.Click += monitoringClavierSourisToolStripMenuItem_Click;
             // 
             // aToolStripMenuItem
             // 
@@ -129,13 +144,6 @@
             MenuAbout.Size = new Size(153, 26);
             MenuAbout.Text = "A propos";
             MenuAbout.Click += MenuAbout_Click;
-            // 
-            // horlogeToolStripMenuItem
-            // 
-            horlogeToolStripMenuItem.Name = "horlogeToolStripMenuItem";
-            horlogeToolStripMenuItem.Size = new Size(224, 26);
-            horlogeToolStripMenuItem.Text = "Horloge";
-            horlogeToolStripMenuItem.Click += horlogeToolStripMenuItem_Click;
             // 
             // MainMenu
             // 
@@ -169,5 +177,6 @@
         private ToolStripMenuItem malwareToolStripMenuItem;
         private ToolStripMenuItem spirographeToolStripMenuItem;
         private ToolStripMenuItem horlogeToolStripMenuItem;
+        private ToolStripMenuItem monitoringClavierSourisToolStripMenuItem;
     }
 }
