@@ -65,7 +65,7 @@
             // lblClicGauche
             // 
             lblClicGauche.AutoSize = true;
-            lblClicGauche.Location = new Point(351, 28);
+            lblClicGauche.Location = new Point(351, 25);
             lblClicGauche.Name = "lblClicGauche";
             lblClicGauche.Size = new Size(86, 20);
             lblClicGauche.TabIndex = 0;
