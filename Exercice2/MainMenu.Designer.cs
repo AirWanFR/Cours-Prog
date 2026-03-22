@@ -43,6 +43,7 @@
             monitoringClavierSourisToolStripMenuItem = new ToolStripMenuItem();
             aToolStripMenuItem = new ToolStripMenuItem();
             MenuAbout = new ToolStripMenuItem();
+            explorateurDeFichierToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -91,7 +92,7 @@
             // 
             // applicationsToolStripMenuItem
             // 
-            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor, malwareToolStripMenuItem, spirographeToolStripMenuItem, horlogeToolStripMenuItem, monitoringClavierSourisToolStripMenuItem });
+            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor, malwareToolStripMenuItem, spirographeToolStripMenuItem, horlogeToolStripMenuItem, monitoringClavierSourisToolStripMenuItem, explorateurDeFichierToolStripMenuItem });
             applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             applicationsToolStripMenuItem.Size = new Size(106, 24);
             applicationsToolStripMenuItem.Text = "Applications";
@@ -145,6 +146,13 @@
             MenuAbout.Text = "A propos";
             MenuAbout.Click += MenuAbout_Click;
             // 
+            // explorateurDeFichierToolStripMenuItem
+            // 
+            explorateurDeFichierToolStripMenuItem.Name = "explorateurDeFichierToolStripMenuItem";
+            explorateurDeFichierToolStripMenuItem.Size = new Size(259, 26);
+            explorateurDeFichierToolStripMenuItem.Text = "Explorateur de Fichier";
+            explorateurDeFichierToolStripMenuItem.Click += explorateurDeFichierToolStripMenuItem_Click;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -178,5 +186,6 @@
         private ToolStripMenuItem spirographeToolStripMenuItem;
         private ToolStripMenuItem horlogeToolStripMenuItem;
         private ToolStripMenuItem monitoringClavierSourisToolStripMenuItem;
+        private ToolStripMenuItem explorateurDeFichierToolStripMenuItem;
     }
 }

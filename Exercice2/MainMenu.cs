@@ -92,5 +92,11 @@ namespace MainMenu
             FicClavierSouris Wcs = new FicClavierSouris();
             Wcs.ShowDialog();
         }
+
+        private void explorateurDeFichierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicExplorateur Wexp = new FicExplorateur(); 
+            Wexp.ShowDialog();
+        }
     }
 }
