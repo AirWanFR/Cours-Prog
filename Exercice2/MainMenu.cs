@@ -95,8 +95,14 @@ namespace MainMenu
 
         private void explorateurDeFichierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FicExplorateur Wexp = new FicExplorateur(); 
+            FicExplorateur Wexp = new FicExplorateur();
             Wexp.ShowDialog();
+        }
+
+        private void histogrammeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicHistogramme Whis = new FicHistogramme();
+            Whis.ShowDialog();
         }
     }
 }
