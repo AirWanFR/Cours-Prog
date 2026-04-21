@@ -42,9 +42,10 @@
             horlogeToolStripMenuItem = new ToolStripMenuItem();
             monitoringClavierSourisToolStripMenuItem = new ToolStripMenuItem();
             explorateurDeFichierToolStripMenuItem = new ToolStripMenuItem();
+            histogrammeToolStripMenuItem = new ToolStripMenuItem();
+            intégrationToolStripMenuItem = new ToolStripMenuItem();
             aToolStripMenuItem = new ToolStripMenuItem();
             MenuAbout = new ToolStripMenuItem();
-            histogrammeToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // 
             // applicationsToolStripMenuItem
             // 
-            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor, malwareToolStripMenuItem, spirographeToolStripMenuItem, horlogeToolStripMenuItem, monitoringClavierSourisToolStripMenuItem, explorateurDeFichierToolStripMenuItem, histogrammeToolStripMenuItem });
+            applicationsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuEditor, malwareToolStripMenuItem, spirographeToolStripMenuItem, horlogeToolStripMenuItem, monitoringClavierSourisToolStripMenuItem, explorateurDeFichierToolStripMenuItem, histogrammeToolStripMenuItem, intégrationToolStripMenuItem });
             applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             applicationsToolStripMenuItem.Size = new Size(106, 24);
             applicationsToolStripMenuItem.Text = "Applications";
@@ -140,6 +141,20 @@
             explorateurDeFichierToolStripMenuItem.Text = "Explorateur de Fichier";
             explorateurDeFichierToolStripMenuItem.Click += explorateurDeFichierToolStripMenuItem_Click;
             // 
+            // histogrammeToolStripMenuItem
+            // 
+            histogrammeToolStripMenuItem.Name = "histogrammeToolStripMenuItem";
+            histogrammeToolStripMenuItem.Size = new Size(259, 26);
+            histogrammeToolStripMenuItem.Text = "Histogramme";
+            histogrammeToolStripMenuItem.Click += histogrammeToolStripMenuItem_Click;
+            // 
+            // intégrationToolStripMenuItem
+            // 
+            intégrationToolStripMenuItem.Name = "intégrationToolStripMenuItem";
+            intégrationToolStripMenuItem.Size = new Size(259, 26);
+            intégrationToolStripMenuItem.Text = "Integration";
+            intégrationToolStripMenuItem.Click += intégrationToolStripMenuItem_Click;
+            // 
             // aToolStripMenuItem
             // 
             aToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { MenuAbout });
@@ -153,13 +168,6 @@
             MenuAbout.Size = new Size(153, 26);
             MenuAbout.Text = "A propos";
             MenuAbout.Click += MenuAbout_Click;
-            // 
-            // histogrammeToolStripMenuItem
-            // 
-            histogrammeToolStripMenuItem.Name = "histogrammeToolStripMenuItem";
-            histogrammeToolStripMenuItem.Size = new Size(259, 26);
-            histogrammeToolStripMenuItem.Text = "Histogramme";
-            histogrammeToolStripMenuItem.Click += histogrammeToolStripMenuItem_Click;
             // 
             // MainMenu
             // 
@@ -196,5 +204,6 @@
         private ToolStripMenuItem monitoringClavierSourisToolStripMenuItem;
         private ToolStripMenuItem explorateurDeFichierToolStripMenuItem;
         private ToolStripMenuItem histogrammeToolStripMenuItem;
+        private ToolStripMenuItem intégrationToolStripMenuItem;
     }
 }

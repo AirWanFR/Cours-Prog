@@ -104,5 +104,11 @@ namespace MainMenu
             FicHistogramme Whis = new FicHistogramme();
             Whis.ShowDialog();
         }
+
+        private void intégrationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FicIntegration Wint = new FicIntegration();
+            Wint.ShowDialog();
+        }
     }
 }
